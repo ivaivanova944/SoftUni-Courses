@@ -1,0 +1,59 @@
+using System;
+
+namespace toy_shop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //   Цена на екскурзията 
+            //      пъзели 2.60
+            //   говорещи кукли 3.00 
+            //   плюшени мечета 4.10 
+            //   миньони 8.20
+            //  камиончета 2.00
+
+            double cena = double.Parse(Console.ReadLine());
+            double puzz = double.Parse(Console.ReadLine());
+            double kukli = double.Parse(Console.ReadLine());
+            double meche = double.Parse(Console.ReadLine());
+            double min = double.Parse(Console.ReadLine());
+            double kamioni = double.Parse(Console.ReadLine());
+            
+
+            double totalCena = puzz * 2.60 + kukli * 3.00 + meche * 4.10 + min * 8.20 + kamioni * 2.00;
+
+            //   Сума: 20 * 2.60 + 25 * 3 + 30 * 4.10 + 50 * 8.20 + 10 * 2 = 680 лв
+            //     Брой на играчките: 20 + 25 + 30 + 50 + 10 = 135
+            //     135 > 50 => 25 % отстъпка; 25 % от 680 = 170 лв.отстъпк
+            //     Крайна цена: 680 – 170 = 510 лв.
+            //     Наем: 10 % от 510 лв. = 51 лв.
+            //    Печалба: 510 – 51 = 459 лв.
+            //    459 > 40.8 => 459 – 40.8 = 418.20 лв.остават
+            double broi = puzz + kukli + meche + min + kamioni;
+
+            if (broi >=50)
+            {
+                totalCena= totalCena -totalCena * 0.25;
+
+            }
+            double pechalba= totalCena - totalCena * 0.1;
+           
+            
+
+            if (pechalba >= cena)
+            {
+                Console.WriteLine($"Yes! {(pechalba - cena):f2} lv left."); 
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! {cena-pechalba:F2} lv needed.");
+            }
+
+
+
+
+
+        }
+    }
+}

@@ -1,0 +1,52 @@
+using System;
+
+namespace Годзила_срещу_Конг
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //   Бюджет за филма 
+            //       Брой на статистите 
+            //      Цена за облекло на един статист
+
+            double bujet = double.Parse(Console.ReadLine());
+            int statisti = int.Parse(Console.ReadLine());
+            double cenaNaObleklo = double.Parse(Console.ReadLine());
+
+            //   Сума за декор: 10 % от 20000 = 2000 лв
+            //      Сума за облекло: 120 * 55.5 = 6660 лв.
+            //     Обща сума за филма: 2000 + 6660 = 8660 лв.
+            //     20000 – 8660 = 11340 лева остават.
+
+            double dekor = bujet /10;
+            double oblekla = statisti * cenaNaObleklo;
+            
+            
+           
+
+            if (statisti > 150)
+            {
+                oblekla = oblekla - oblekla/10;
+
+            }
+
+            double totalPrice = oblekla + dekor;
+
+
+            if (bujet >= totalPrice)//200 -100=100
+              
+            {
+                Console.WriteLine($"Action!");
+                Console.WriteLine($"Wingard starts filming with {bujet - totalPrice:f2} leva left.");
+            }
+           else //if (bujet < totalPrice)
+                
+            {
+                Console.WriteLine($"Not enough money!");
+                Console.WriteLine($"Wingard needs {totalPrice - bujet:f2} leva more.");
+            }
+
+        }
+    }
+}

@@ -1,0 +1,29 @@
+using System;
+
+namespace Сума_секунди
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int fTime = int.Parse(Console.ReadLine());
+            int sTime = int.Parse(Console.ReadLine());
+            int tTime = int.Parse(Console.ReadLine());
+
+            int totalTime = fTime + sTime + tTime;
+
+            int minutes = totalTime / 60;
+            int sec = totalTime % 60;
+
+            if (sec < 10)
+            {
+                Console.WriteLine($"{minutes}:0{sec}");
+            }
+            else
+            {
+                Console.WriteLine($"{minutes}:{sec}");
+            }
+        
+        }
+    }
+}
