@@ -1,0 +1,33 @@
+using System;
+
+namespace _09._Spice_Must_Flow
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int countOfSpices = int.Parse(Console.ReadLine());
+            int totalConsumen = 0;
+            const int CONSUMED = 26;
+            const int MINIMUM_SPICES = 100;
+            const int DALLY_DECREES_OG_MINE = 10;
+            int daysCount = 0;
+                
+
+            while (countOfSpices>=MINIMUM_SPICES)
+            {
+                totalConsumen += countOfSpices - CONSUMED;
+                countOfSpices -= DALLY_DECREES_OG_MINE;
+                daysCount++;
+
+                if (countOfSpices<MINIMUM_SPICES)
+                {
+                    totalConsumen -= CONSUMED;
+                }
+
+            }
+            Console.WriteLine(daysCount);
+            Console.WriteLine(totalConsumen);
+        }
+    }
+}

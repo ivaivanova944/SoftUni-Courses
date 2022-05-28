@@ -1,0 +1,28 @@
+using System;
+
+namespace Exercise.Intro_and_Basic_Syntax
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+           
+            double price = 0;
+            for (int i = 0; i < n; i++)
+            {
+                double sum = 0;
+                double capsul = double.Parse(Console.ReadLine());
+                int days = int.Parse(Console.ReadLine());
+                int capsulCount = int.Parse(Console.ReadLine());
+
+                sum += (days * capsulCount) * capsul;
+                price+= sum;
+                Console.WriteLine($"The price for the coffee is: ${sum:f2}");
+
+            }
+            
+            Console.WriteLine($"Total: ${price:f2}");
+        }
+    }
+}

@@ -1,0 +1,29 @@
+using System;
+
+namespace _6._Strong_Number
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            int numberCopy = number;
+            int sum = 0;
+            //145=>1.4.5
+
+            while (number>0)
+            {
+                int factorialNum = 1;
+                int currNum = number % 10;
+                number /= 10;
+
+                for (int i = 2; i <= currNum; i++)
+                {
+                    factorialNum *= i;
+                }
+                sum += factorialNum;
+            }
+            Console.WriteLine(sum == numberCopy ? "yes" : "no" ) ;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+using System;
+using System.Numerics;
+
+namespace _11._Snowballs__не
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           int snowBows =int.Parse(Console.ReadLine());
+            BigInteger snowBallValie = 0;
+            BigInteger snowBallSnow = 0;
+            BigInteger snowBowTime = 0;
+            int snowBallQuality = 0;
+            BigInteger bestSnowBall = int.MinValue;
+            string bestSnowBallFormula = "";
+
+            for (int i = 0; i < snowBows; i++)
+            {
+                snowBallSnow = BigInteger.Parse(Console.ReadLine());
+                snowBowTime = BigInteger.Parse(Console.ReadLine());
+                snowBallQuality = int.Parse(Console.ReadLine());
+
+
+                BigInteger value = snowBallSnow / snowBowTime;
+                snowBallValie = BigInteger.Pow(value, snowBallQuality);
+                if (snowBallValie>bestSnowBall)
+                {
+                    bestSnowBall = snowBallValie;
+                    bestSnowBallFormula = $"{snowBallSnow} : {snowBowTime} = {snowBallValie} ({snowBallQuality})";
+                       
+                }
+            }
+            Console.WriteLine(bestSnowBallFormula);
+
+        }
+    }
+}

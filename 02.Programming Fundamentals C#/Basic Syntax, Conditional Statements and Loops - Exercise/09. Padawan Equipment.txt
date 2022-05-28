@@ -1,0 +1,37 @@
+using System;
+
+namespace _9._Padawan_Equipment
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            int studentCount = int.Parse(Console.ReadLine());
+            double priceOfSaber = double.Parse(Console.ReadLine());
+            double priceOfRober = double.Parse(Console.ReadLine());
+            double  priceOfBelts= double.Parse(Console.ReadLine());
+
+            double totalNubOfSaber = Math.Ceiling(studentCount * 1.10);
+                double numOfFreeBelts = Math.Floor(studentCount / 6.0);
+
+            double finalPriceForSaabers = totalNubOfSaber * priceOfSaber;
+            double finalPriceForRobes = studentCount * priceOfRober;
+            double finalPriceForBelts = (studentCount - numOfFreeBelts) * priceOfBelts;
+
+            double totalFinalPrice = finalPriceForSaabers + finalPriceForRobes + finalPriceForBelts;
+
+            if (budget>=totalFinalPrice)
+            {
+                Console.WriteLine($"The money is enough - it would cost {totalFinalPrice:f2}lv.");
+            }
+            else
+            {
+                double moneyNeeded = Math.Abs(totalFinalPrice - budget);
+                Console.WriteLine($"John will need {moneyNeeded:f2}lv more.");
+            }
+
+
+        }
+    }
+}

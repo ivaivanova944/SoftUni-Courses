@@ -1,0 +1,19 @@
+using System;
+
+namespace _10.__Multiplication_Table
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+
+            for (int times = 1; times <=10; times++)
+            {
+                Console.WriteLine($"{number} X {times} = {number*times}");
+            }
+
+
+        }
+    }
+}

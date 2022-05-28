@@ -1,0 +1,35 @@
+using System;
+
+namespace _5._Login
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            string password = "";
+
+            for (int i = name.Length-1; i >= 0; i--)
+            {
+                password+=name[i];
+            }
+        int count = 0;
+        string inputPassword = Console.ReadLine();
+            while (inputPassword!=password)
+            {
+                count++;
+                if (count>3)
+                {
+                    Console.WriteLine($"User {name} blocked!");
+                    return;
+                }
+                Console.WriteLine($"Incorrect password. Try again.");
+                inputPassword = Console.ReadLine();
+            }
+            if (inputPassword==password)
+            {
+                Console.WriteLine($"User {name} logged in.");
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+using System;
+
+namespace _5._Month_Printer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int input = int.Parse(Console.ReadLine());
+
+            if (input>12||input<1)
+            {
+                Console.WriteLine($"Error!");
+            }
+            if (input==1)
+            {
+                Console.WriteLine("January");
+            }
+            if (input==2)
+            {
+                Console.WriteLine("February");
+            }
+            if (input==3)
+            {
+                Console.WriteLine("March");
+            }
+            if (input==4)
+            {
+                Console.WriteLine("April");
+            }
+            if (input==5)
+            {
+                Console.WriteLine("May");
+            }
+            if (input==6)
+            {
+                Console.WriteLine("June");
+            }
+            if (input==7)
+            {
+                Console.WriteLine("July");
+            }
+            if (input==8)
+            {
+                Console.WriteLine("August");
+            }
+            if (input==9)
+            {
+                Console.WriteLine("September");
+            }
+            if (input==10)
+            {
+                Console.WriteLine("October");
+            }
+            if (input==11)
+            {
+                Console.WriteLine("November");
+            }
+            if (input==12)
+            {
+                Console.WriteLine("December");
+            }
+        }
+    }
+}

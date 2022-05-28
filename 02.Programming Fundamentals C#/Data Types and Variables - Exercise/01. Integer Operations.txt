@@ -1,0 +1,22 @@
+using System;
+
+namespace Exercise.Data_Types_and_Variables
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int first = int.Parse(Console.ReadLine());
+            int sec = int.Parse(Console.ReadLine());
+            int thir = int.Parse(Console.ReadLine());
+            int four = int.Parse(Console.ReadLine());
+
+            long productOne = (long)first + sec;
+            long productTwo = productOne / thir;
+            long productThre = productTwo * four;
+            Console.WriteLine(productThre);
+            
+
+        }
+    }
+}

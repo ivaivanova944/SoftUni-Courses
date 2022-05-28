@@ -1,0 +1,28 @@
+using System;
+
+namespace _10._Poke_Mon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int power = int.Parse(Console.ReadLine());
+            int distance = int.Parse(Console.ReadLine());
+            int factor = int.Parse(Console.ReadLine());
+            int startPower = power;
+            int count = 0;
+
+            while (power>=distance)
+            {
+                power -= distance;
+                count++;
+                if (startPower*0.5==power&& factor>0)
+                {
+                    power /= factor;
+                }
+            }
+            Console.WriteLine(power);
+            Console.WriteLine(count);
+        }
+    }
+}
