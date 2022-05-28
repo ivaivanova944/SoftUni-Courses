@@ -1,0 +1,33 @@
+using System;
+
+namespace _04._Fishing_Boat
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+         
+
+            int budget = int.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            int fishermen=int.Parse(Console.ReadLine());
+           
+            double rentShip = 0;
+            if (season == "Spring") rentShip = 3000;
+            else if (season == "Summer" || season == "Autumn") rentShip = 4200;
+            else rentShip = 2600;
+           
+            if (fishermen <= 6) rentShip -= rentShip * 0.10;
+            else if (fishermen <= 11) rentShip -= rentShip * 0.15;
+            else rentShip -= rentShip * 0.25;
+            if (fishermen % 2 == 0 && season != "Autumn") rentShip -= rentShip * 0.05;
+            
+            if (budget >= rentShip) Console.WriteLine($"Yes! You have {budget-rentShip:f2} leva left.");
+            else Console.WriteLine($"Not enough money! You need {rentShip-budget:f2} leva.");
+
+
+
+
+        }
+    }
+}

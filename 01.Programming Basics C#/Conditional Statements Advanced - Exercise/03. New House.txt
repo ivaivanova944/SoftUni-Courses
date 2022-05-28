@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace New_home
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string flower = Console.ReadLine();
+            int broy = int.Parse(Console.ReadLine());
+            int budget = int.Parse(Console.ReadLine());
+            double cena = 0;
+            double cenarozi = broy * 5.0;
+            double cenadalii = broy * 3.80;
+            double cenalaleta = broy * 2.80;
+            double cenanarcisi = broy * 3.0;
+            double cenagladioli = broy * 2.50;
+            if (flower == "Roses")
+            {
+                if (broy > 80) cena = cenarozi - (cenarozi * 0.10);
+                else cena = cenarozi;
+            }
+            else if ( flower =="Dahlias")
+            {
+                if (broy > 90) cena = cenadalii -  (cenadalii * 0.15);
+                else cena = cenadalii;
+            }
+            else if ( flower == "Tulips")
+            {
+                if (broy > 80) cena = cenalaleta - ( cenalaleta * 0.15);
+                else cena = cenalaleta;
+            }
+            else if (flower == "Narcissus")
+            {
+                if (broy < 120) cena = cenanarcisi * 1.15;
+                else cena = cenanarcisi;
+            }
+            else if (flower =="Gladiolus")
+            {
+                if (broy < 80) cena = cenagladioli * 1.20;
+                else cena = cenagladioli;
+            }
+            double ostatuk = budget - cena;
+            double nedostig = cena - budget;
+            if (  cena <= budget) Console.WriteLine($"Hey, you have a great garden with {broy} {flower} and {ostatuk:F2} leva left.");
+            else Console.WriteLine($"Not enough money, you need {nedostig:F2} leva more."); 
+        }
+    }
+}

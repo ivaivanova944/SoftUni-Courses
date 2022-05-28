@@ -1,0 +1,28 @@
+using System;
+
+namespace plodove_ili_zelenchuci
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name =( Console.ReadLine());
+            string product = "fruit";
+            // banana, apple, kiwi, cherry, lemon и grapes
+            if (name == "banana" ||name=="apple"|| name == "kiwi" || name=="cherry" || name== "lemon"|| name == "grapes")
+            {
+                product = "fruit";//tomato, cucumber, pepper и carrot
+
+            }
+           else if (name == "tomato"||name=="cucumber"||name=="pepper"||name=="carrot")
+            {
+                product = "vegetable";
+            }
+            else
+            {
+                product = "unknown";
+            }
+            Console.WriteLine(product);
+        }
+    }
+}

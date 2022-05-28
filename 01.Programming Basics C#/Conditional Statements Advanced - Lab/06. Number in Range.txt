@@ -1,0 +1,30 @@
+using System;
+
+namespace chislovintervala
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+
+            // -100 do 100 i e razlichno ot 0
+if (number == 0 )
+            {
+                Console.WriteLine("No");
+
+            }//if (number<= -100 || number<=100||number!=0)
+    else if(number !=0 && number <=100 && number>=-100)
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+            
+            
+           
+        }
+    }
+}
