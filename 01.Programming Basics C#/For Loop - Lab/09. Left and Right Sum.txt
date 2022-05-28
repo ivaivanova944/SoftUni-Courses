@@ -1,0 +1,33 @@
+using System;
+
+namespace Flower_Shop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int broi4isla = int.Parse(Console.ReadLine());
+            int sum1chisla = 0;
+            int sum2chisla = 0;
+            for (int i = 0; i < broi4isla; i++)
+            {
+                int cisla = int.Parse(Console.ReadLine());
+                sum1chisla += cisla;
+            }
+            for (int i = 0; i < broi4isla; i++)
+            {
+                int cisla = int.Parse(Console.ReadLine());
+                sum2chisla += cisla;
+            }
+            if (sum1chisla== sum2chisla)
+            {
+                Console.WriteLine($"Yes, sum = {sum1chisla}");
+            }
+            else
+            {
+                int dif = Math.Abs(sum1chisla - sum2chisla);
+                Console.WriteLine($"No, diff = {dif}");
+            }
+        }           
+    }
+}

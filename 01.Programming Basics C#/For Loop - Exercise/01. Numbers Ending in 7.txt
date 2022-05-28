@@ -1,0 +1,18 @@
+using System;
+
+namespace _02._Елемент_на_половин_сума
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 7; i <= 997; i+=10)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+

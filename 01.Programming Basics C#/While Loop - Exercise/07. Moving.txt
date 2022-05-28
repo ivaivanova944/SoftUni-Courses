@@ -1,0 +1,34 @@
+using System;
+
+namespace _10feb
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int width = int.Parse(Console.ReadLine());
+            int length = int.Parse(Console.ReadLine());
+            int height = int.Parse(Console.ReadLine());
+
+            string numberOfBoxes = Console.ReadLine();
+
+            int cubicMeters = width * length * height;
+            int boxes = 0;
+
+            while (numberOfBoxes != "Done")
+            {
+                boxes += int.Parse(numberOfBoxes);
+                if (cubicMeters < boxes)
+                {
+                    Console.WriteLine($"No more free space! You need {Math.Abs(cubicMeters - boxes)} Cubic meters more.");
+                    break;
+                }
+                numberOfBoxes = Console.ReadLine();
+            }
+            if (numberOfBoxes == "Done")
+            {
+                Console.WriteLine($"{cubicMeters - boxes} Cubic meters left.");
+            }
+        }
+    }
+}

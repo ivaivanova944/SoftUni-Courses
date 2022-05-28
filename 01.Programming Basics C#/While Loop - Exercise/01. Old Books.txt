@@ -1,0 +1,38 @@
+using System;
+
+namespace _01.starata_biblioteka
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string favoriteBook = Console.ReadLine();
+            string book = Console.ReadLine();
+           int counter = 0;
+            bool isBookFound = false;
+
+            while (book!="No More Books")
+            {   
+                if (book==favoriteBook)
+                {
+                   isBookFound=true;
+                    break;
+                }
+                counter++;
+                book = Console.ReadLine();
+
+
+            }
+            if (isBookFound)
+            {
+                Console.WriteLine($"You checked {counter} books and found it.");
+            }
+            else
+            {
+
+                Console.WriteLine("The book you search is not here!");
+                Console.WriteLine($"You checked {counter} books.");
+            }
+        }
+    }
+}

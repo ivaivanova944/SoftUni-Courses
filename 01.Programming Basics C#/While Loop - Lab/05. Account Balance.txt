@@ -1,0 +1,30 @@
+using System;
+
+namespace _5._Баланс_по_сметка
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string imput= (Console.ReadLine());
+
+            double account = 0;
+            while (imput != "NoMoreMoney")
+            {
+                double amount = double.Parse(imput);
+                if (amount<0)
+                {
+                    Console.WriteLine("Invalid operation!");
+                    break;
+                }
+                account += amount;
+                Console.WriteLine($"Increase: {amount:f2}");
+
+                imput = (Console.ReadLine());
+
+
+            }
+            Console.WriteLine($"Total: {account:f2}");
+        }
+    }
+}

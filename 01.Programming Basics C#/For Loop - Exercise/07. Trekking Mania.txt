@@ -1,0 +1,80 @@
+using System;
+
+namespace _01.Starata_biblioteka
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+
+
+                
+
+
+                // от конзолата броя на групите и колко хора е всяка група
+                int n = int.Parse(Console.ReadLine());
+
+                // групи туристи според броя
+                int peak1 = 0;
+                int peak2 = 0;
+                int peak3 = 0;
+                int peak4 = 0;
+                int peak5 = 0;
+
+                for (int i = 1; i <= n; i++) // проверка брой хора
+                {
+                    int num = int.Parse(Console.ReadLine()); // взимаме от конзолата брой хора
+
+                    if (num <= 5) // разпределяме в групи по броя
+                    {
+                        //   group1 = num;
+                        peak1 += num;
+                    }
+                    if (num >= 6 && num <= 12)
+                    {
+                        //    group2 = num;
+                        peak2 += num;
+                    }
+                    if (num >= 13 && num <= 25)
+                    {
+                        //    group3 = num;
+                        peak3 += num;
+                    }
+                    if (num >= 26 && num <= 40)
+                    {
+                        //    group4 = num;
+                        peak4 += num;
+                    }
+                    if (num >= 41)
+                    {
+                        //    group5 = num;
+                        peak5 += num;
+                    }
+
+                }
+
+                double totalPersons = peak1 + peak2 + peak3 + peak4 + peak5;
+
+              double  ppeak1 = peak1 / totalPersons * 100;   // изчисляваме процента за всяка група 
+              double  ppeak2 = peak2 / totalPersons * 100;
+              double  ppeak3 = peak3 / totalPersons * 100;
+              double  ppeak4 = peak4 / totalPersons * 100;
+              double  ppeak5 = peak5 / totalPersons * 100;
+
+                Console.WriteLine($"{ppeak1:f2}%"); // печатаме резултат в конзолата 
+                Console.WriteLine($"{ppeak2:f2}%");
+                Console.WriteLine($"{ppeak3:f2}%");
+                Console.WriteLine($"{ppeak4:f2}%");
+                Console.WriteLine($"{ppeak5:f2}%");
+
+
+            }
+        }
+    }
+
+    
+
+ 
+    
+

@@ -1,0 +1,29 @@
+using System;
+
+namespace _07.Min_Number2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+                int minNumber = int.MaxValue;
+                string input = Console.ReadLine();  //четеш инпут
+                while (input != "Stop")
+                {
+                    int n = int.Parse(input); //парсваш към инт
+                    if (n < minNumber)
+                    {
+                        minNumber = n;
+                    }
+                    input = Console.ReadLine(); // четеш следваш инпут
+                }
+                Console.WriteLine(minNumber);
+
+            }
+        }
+    }
+
+
+    
+

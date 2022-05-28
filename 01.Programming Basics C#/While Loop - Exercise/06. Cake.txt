@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp16
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = double.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine());
+            Double c = 0;
+            string command = Console.ReadLine();
+            double ckake = a*b;
+            while (command != "STOP")
+            {
+                c = double.Parse(command) + c;
+                
+                if(ckake < c)
+                {
+                    Console.WriteLine($"No more cake left! You need {c- (a * b)} pieces more.");
+                    return;
+                }
+                command = Console.ReadLine();
+            }
+            if(command == "STOP")
+            {
+                Console.WriteLine($"{ckake - c} pieces are left.");
+            }
+        }
+    }
+}

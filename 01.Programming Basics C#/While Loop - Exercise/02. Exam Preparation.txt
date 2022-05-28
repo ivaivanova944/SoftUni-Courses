@@ -1,0 +1,45 @@
+using System;
+
+namespace _01.demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int negativeGradeMax = int.Parse(Console.ReadLine());
+            string exercise = Console.ReadLine();
+            int negativeGrade = 0;
+            int gradeCount = 0;
+            double gradeSum = 0;
+            string lastExsercise = "";
+
+
+
+            while (exercise !="Enough")
+            {
+                double grade = double.Parse(Console.ReadLine());
+                lastExsercise = exercise;
+                if (grade <=4)
+                {
+                    negativeGrade++;
+                    if (negativeGrade == negativeGradeMax)
+                    {
+                        Console.WriteLine($"You need a break, {negativeGradeMax} poor grades.");
+                        return;
+                    }
+                }
+
+                gradeSum += grade;
+                gradeCount++;
+                exercise = Console.ReadLine();
+            }
+            Console.WriteLine($"Average score: {gradeSum/gradeCount:f2}");
+            Console.WriteLine($"Number of problems: {gradeCount}");
+            Console.WriteLine($"Last problem: {lastExsercise}");
+           
+            
+
+
+        }
+    }
+}

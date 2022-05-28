@@ -1,0 +1,39 @@
+using System;
+
+namespace _02._Елемент_на_половин_сума_for
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int sum = 0;
+            int max = int.MinValue;
+
+            for (int i = 0; i < n; i++)
+            {
+                int num = int.Parse(Console.ReadLine());
+                sum += num;
+                if (num > max)
+                {
+                    max = num;
+                }
+
+
+            }
+            int sumWithautMaxNumber = sum - max;
+
+            if (max == sumWithautMaxNumber)
+            {
+                Console.WriteLine("Yes");
+                Console.WriteLine($"Sum = {max}");
+            }
+            else
+            {
+                int diff = Math.Abs(max - sumWithautMaxNumber);
+                Console.WriteLine("No");
+                Console.WriteLine($"Diff = {diff}");
+            }
+        }
+    }
+}
