@@ -1,0 +1,31 @@
+using System;
+using System.Linq;
+
+namespace Ln._1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+            
+            int[] num = Console.ReadLine()
+                .Split(" " ,StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToArray();
+
+            int rotationsCount = int.Parse(Console.ReadLine());
+
+
+            for (int i = 1; i <= rotationsCount; i++)
+            {
+                int firstEl = num[0];
+                for (int j = 0; j <= num.Length-2; j++)
+                {
+                    num[j] = num[j + 1];
+                }
+                num[num.Length-1] = firstEl;
+            }
+            Console.WriteLine(String.Join (" " ,num));
+        }
+    }
+}

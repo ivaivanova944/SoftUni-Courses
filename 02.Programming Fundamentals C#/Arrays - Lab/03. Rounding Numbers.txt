@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+
+namespace _03._Rounding_Numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string [] arr = Console.ReadLine().Split();
+            double [] arr2 = new double[arr.Length];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr2[i] =double.Parse(arr[i]);
+               
+            }
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                Console.WriteLine($"{arr2[i]} => {(int)Math.Round(arr2[i],MidpointRounding.AwayFromZero)}");
+            }
+        }
+    }
+}

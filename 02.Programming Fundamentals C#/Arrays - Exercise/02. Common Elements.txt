@@ -1,0 +1,32 @@
+using System;
+
+namespace _02.common_Elements
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+                string[] arr = Console.ReadLine().Split(" ");
+                string[] arr2 = Console.ReadLine().Split(" ");
+
+
+                foreach (var elementTwo in arr2)
+                {
+                    for (int i = 0; i < arr.Length; i++)
+                    {
+                        string elementOne = arr[i];
+
+                        if (elementTwo == elementOne)
+                        {
+                            Console.Write(elementOne + " ");
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+

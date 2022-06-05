@@ -1,0 +1,47 @@
+using System;
+using System.Linq;
+
+namespace Top_Integers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = Console.ReadLine()
+                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToArray();
+
+            int[] topInt = new int[arr.Length];
+            int intIndex = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int curNumber = arr[i];
+                bool isTopInt = true;
+
+                for (int j = i+1; j < arr.Length; j++)
+                {
+                    int nextNumber = arr[j];
+                    if (curNumber<=nextNumber)
+                    {
+                        isTopInt = false;
+                        break;
+                    }
+                }
+                if (isTopInt)
+                {
+                    topInt[intIndex] = curNumber;
+                    intIndex++;
+                }
+
+
+            }
+            for (int i = 0; i < intIndex; i++)
+            {
+                Console.Write($"{topInt[i]} ");
+            }
+
+            
+        }
+    }
+}

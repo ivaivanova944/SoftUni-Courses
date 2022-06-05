@@ -1,0 +1,41 @@
+using System;
+using System.Linq;
+
+namespace _07._Max_Sequence_of_Equal_Elements
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] input=Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+
+            int maxElement = 0;
+            int currentEqgualElemenft = 1;
+            int element = 0;
+;
+            for (int i = 0; i <input.Length-1; i++)
+            {
+                if (input[i]==input[i+1])
+                {
+                    currentEqgualElemenft++;
+                }
+                else
+                {
+                    currentEqgualElemenft = 1;
+                }
+                if (currentEqgualElemenft>maxElement)
+                {
+                    maxElement = currentEqgualElemenft;
+                    element = input[i];
+                }
+            }
+            for (int i = 0; i < maxElement; i++)
+            {
+                Console.Write(element+ " ");
+            }
+           
+        }
+
+
+    }
+}

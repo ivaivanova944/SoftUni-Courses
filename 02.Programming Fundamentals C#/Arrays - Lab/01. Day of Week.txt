@@ -1,0 +1,31 @@
+using System;
+
+namespace fundamentals.Array.lab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] arr = new string []
+            { 
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            };
+            int dayNum = int.Parse(Console.ReadLine());
+
+            if (dayNum<1||dayNum>arr.Length)
+            {
+                Console.WriteLine("Invalid day!");
+            }
+            else
+            {
+                Console.WriteLine(arr[dayNum-1]);
+            }
+        }
+    }
+}
